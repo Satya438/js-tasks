@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kiet Group of education</title>
+    <link rel='stylesheet' href='registeration.css' type='text/css' />
+    <script src="registeration.js"></script>
+</head>
+
+
+<body>
+    <div class="header">
+        <a href="https://KIET.com">
+        </a>
+    </div>
+
+    <div class="side2">
+        <form name="registration">
+            <h1>Student Registration Form</h1><br>
+            <table>
+                <tr>
+                    <td><label>Student ID: </label></td>
+                    <td>
+                        <input type="text" id="sid" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>First Name: </label></td>
+                    <td>
+                        <input type="text" id="fname" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Last Name: </label></td>
+                    <td>
+                        <input type="text" id="lname" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Email: </label></td>
+                    <td>
+                        <input type="text" id="email" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Branch: </label></td>
+                    <td>
+                        <input type="text" id="Branch" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Gender: </label></td>    
+                    <td>    
+                        <input type="radio" name="gender" value="Male">Male    
+                        <input type="radio" name="gender" value="Female">Female    
+                    </td>  
+                </tr>
+                <tr>
+                    <td><label>Course: </label></td>
+                    <td>
+                        <select id="Course">
+                            <option selected="" value="Default">Please select</option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="M.Tech">M.Tech</option>
+                            <option value="Polytechnic">Polytechnic</option>
+                            <option value="MBA">MBA</option>
+                            <option value="MCA">MCA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Student type: </label></td>    
+                    <td>    
+                        <input type="checkbox" name="studenttype" value="reimbursment">reimbursment    
+                        <input type="checkbox" name="studenttype" value="condonation">condonation    
+                    </td>  
+                </tr>
+
+                <tr>
+                    <td>
+                        <input class="button" type="button" name="submit" value="Submit" onclick="return validate(detail)">
+                        <input class="reset" type="reset" name="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+
+            
+            <script>
+                var id = document.querySelector("#sid");
+                var fname = document.querySelector("#fname");
+                var lname = document.querySelector("#lname");
+                var email = document.querySelector("#email");
+                var Branch = document.querySelector("#Branch");
+                var gender = document.registration.gender;
+                var Course = document.querySelector("#course");
+                var studenttype = document.registration.studenttype;
+
+                function detail() {
+                    var data = {
+                        "Student ID" : id.value,
+                        "First Name" : fname.value,
+                        "Last Name" : lname.value,
+                        "Email" : email.value,
+                        "Branch" : Branch.value,
+                        "Gender" : gender.value,
+                        "Student Type" : studenttype.value
+
+                    }
+                    
+                    console.log(data);
+
+                }
+            </script>
+        </form>
+    </div>
+
+</body>
+
+</html>
